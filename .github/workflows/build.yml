@@ -1,4 +1,4 @@
-name: build
+name: LynxiumMC builds
 
 on:
   push:
@@ -26,6 +26,7 @@ jobs:
       with:
         name: newb-x-windows
         path: ./build/Windows/temp
+
   android:
     runs-on: ubuntu-latest
     steps:
@@ -44,6 +45,7 @@ jobs:
       with:
         name: newb-x-android
         path: ./build/Android/temp
+
   ios:
     runs-on: ubuntu-latest
     steps:
