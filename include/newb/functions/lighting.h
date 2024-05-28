@@ -54,7 +54,8 @@ vec3 nlLighting(
   if (nether || end) {
     // nether & end lighting
 
-    light = end ? NL_END_AMBIENT : NL_NETHER_AMBIENT;
+    // ambient - end and nether
+    light = end ? vec3(1.98,1.25,2.3) : vec3(3.0,2.16,1.89);
 
     light += horizonCol + torchLight*0.5;
   } else {
@@ -93,7 +94,11 @@ vec3 nlLighting(
   }
 
   // darken at crevices
-  light *= COLOR.g > 0.35 ? 1.0 : 0.8;
+  // darken at crevices
+  float col_max = max(COLOR.r, max(COLOR.g, COLOR.b));
+  if (col_max < 0.7) {
+      light *= 0.4;    
+  }
 
   // brighten tree leaves
   if (isTree) {
@@ -139,9 +144,9 @@ vec3 nlActorLighting(vec3 pos, vec4 normal, mat4 world, vec4 tileLightCol, vec4 
 
   // nether, end, underwater tint
   if (nether) {
-    light *= tileLightCol.x*NL_NETHER_AMBIENT*0.5;
+    light *= tileLightCol.x*vec3(1.4,0.96,0.9);
   } else if (end) {
-    light *= NL_END_AMBIENT;
+    light *= vec3(2.1,1.5,2.3);
   } else if (underWater) {
     light += NL_UNDERWATER_BRIGHTNESS;
     light *= mix(normalize(horizonCol),vec3(1.0,1.0,1.0),tileLightCol.x*0.5);
