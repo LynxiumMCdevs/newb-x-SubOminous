@@ -40,7 +40,7 @@
 #define NL_SUN_INTENSITY 5.0   // 0.5 weak ~ 5.0 bright
 #define NL_TORCH_INTENSITY 1.1  // 0.5 weak ~ 3.0 bright
 #define NL_NIGHT_BRIGHTNESS 1.2 // 0.0 dark ~ 2.0 bright
-#define NL_CAVE_BRIGHTNESS  2.0 // 0.0 dark ~ 2.0 bright
+#define NL_CAVE_BRIGHTNESS  3.0 // 0.0 dark ~ 2.0 bright
 #define NL_SHADOW_INTENSITY 0.7 // 0.0 no shadow ~ 1.0 strong shadow
 #define NL_BLINKING_TORCH     // [toggle] flickering light
 #define NL_CLOUD_SHADOW       // [toggle] cloud shadow (simple clouds only)
@@ -153,7 +153,7 @@
 #define NL_GODRAY 0.8 // [toggle] 0.1 subtle ~ 0.8 strong
 
 /* Sky reflection */
-#define NL_GROUND_REFL 0.1      // [toggle] 0.2 slightly reflective ~ 1.0 fully reflect sky 
+#define NL_GROUND_REFL 0.0      // [toggle] 0.2 slightly reflective ~ 1.0 fully reflect sky 
 #define NL_GROUND_RAIN_WETNESS 1.0 // 0.0 no wetness ~ 1.0 fully wet blocks when raining
 #define NL_GROUND_RAIN_PUDDLES 0.7 // 0.0 no puddles ~ 1.0 puddles
 //#define NL_GROUND_AURORA_REFL    // [toggle] aurora reflection on ground
